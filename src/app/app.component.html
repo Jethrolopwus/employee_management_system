@@ -50,7 +50,7 @@
             <button mat-icon-button (click)='editUsers(row)' color="primary">
               <mat-icon>update</mat-icon>
             </button>  
-            <button mat-icon-button color="warn">
+            <button (click)="deleteUser(row.id)" mat-icon-button color="warn">
               <mat-icon>delete</mat-icon>
             </button>  
           </td>

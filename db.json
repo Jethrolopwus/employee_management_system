@@ -11,15 +11,15 @@
     {
       "firstName": "john",
       "gender": "male",
-      "lastName": "Ben",
+      "lastName": "Bad",
       "email": "ben@gmail.com",
       "password": "12345",
       "id": 2
     },
     {
-      "firstName": "Peter",
+      "firstName": "peter",
       "gender": "male",
-      "lastName": "Gyang",
+      "lastName": "Gyan",
       "email": "peter@gmail.com",
       "password": "5684",
       "id": 3

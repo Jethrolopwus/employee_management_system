@@ -29,7 +29,11 @@ export class AppComponent implements OnInit {
   openDialog() {
     this.dialog.open(DialogComponent, {
      width: '30%'
-    });
+    }).afterClosed().subscribe(value=>{
+      if(value ==='save'){
+        this.getAllUsers();
+      }
+    })
   }
   getAllUsers(){
     this.api.getUsers()
@@ -49,6 +53,23 @@ export class AppComponent implements OnInit {
     this.dialog.open(DialogComponent,{
       width: '30%',
       data:row
+    }).afterClosed().subscribe(value=>{
+      if(value=== 'update'){
+        this.getAllUsers();
+      }
+    })
+  }
+  deleteUser(id:number){
+    this.api.deleteUser(id)
+    .subscribe({
+      next:(res)=>{
+        alert('User deleted successfully!');
+        this.getAllUsers();
+      },
+      error:()=>{
+
+        alert('error while deleting user')
+      }
     })
   }
   applyFilter(event: Event) {

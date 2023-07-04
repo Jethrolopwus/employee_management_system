@@ -11,6 +11,7 @@ import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 })
 export class DialogComponent implements OnInit{
   usersform !: FormGroup;
+  actionBtn: string ="save";
   constructor(private formBuilder:FormBuilder, private api : ApiService,
      @Inject(MAT_DIALOG_DATA) public editData : any, private dialogRef: 
      MatDialogRef<DialogComponent>){}
@@ -22,23 +23,49 @@ export class DialogComponent implements OnInit{
       email:['', Validators.required],
       password:['', Validators.required],
     });
-    console.log(this.editData);
+    // console.log(this.editData);
+    if(this.editData){
+      this.actionBtn = "update";
+      this.usersform.controls['firstName'].setValue(this.editData.firstName);
+      this.usersform.controls['gender'].setValue(this.editData.gender);
+      this.usersform.controls['lastName'].setValue(this.editData.lastName);
+      this.usersform.controls['email'].setValue(this.editData.email);
+      this.usersform.controls['password'].setValue(this.editData.password);
+    }
   }
   addUser(){
     // console.log(this.usersform.value);
-    if(this.usersform.valid){
-      this.api.postUsers(this.usersform.value)
-      .subscribe({
-        next:(res)=>{
-          alert("User Added Successfully!")
-          this.usersform.reset();
-          this.dialogRef.close('save');
-        },
-        error:()=>{
-          alert("Error While Adding User")
-        }
-      })
+    if(!this.editData){
+      if(this.usersform.valid){
+        this.api.postUsers(this.usersform.value)
+        .subscribe({
+          next:(res)=>{
+            alert("User Added Successfully!")
+            this.usersform.reset();
+            this.dialogRef.close('save');
+          },
+          error:()=>{
+            alert("Error While Adding User")
+          }
+        })
+      }
+    }else{
+      this.updateUser()
     }
+  }
+  updateUser() {
+    this.api.updateUser(this.usersform.value, this.editData.id)
+    .subscribe({
+      next:(res)=>{
+        alert('User updated successfy!');
+        this.usersform.reset();
+        this.dialogRef.close('update');
+      },
+      error:()=>{
+        alert('error while updating the records')
+      }
+
+    })
   }
 
 }
