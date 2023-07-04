@@ -1,0 +1,22 @@
+{
+  "usersList": [
+    {
+      "firstName": "jethro",
+      "gender": "male",
+      "lastName": "horop",
+      "email": "lopwuus@gmail.com",
+      "password": "124",
+      "id": 1
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
