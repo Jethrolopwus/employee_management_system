@@ -1,14 +1,6 @@
 {
   "usersList": [
     {
-      "firstName": "jethro",
-      "gender": "male",
-      "lastName": "horop",
-      "email": "lopwuus@gmail.com",
-      "password": "124",
-      "id": 1
-    },
-    {
       "firstName": "john",
       "gender": "male",
       "lastName": "Bad",
@@ -23,6 +15,22 @@
       "email": "peter@gmail.com",
       "password": "5684",
       "id": 3
+    },
+    {
+      "firstName": "jethro",
+      "gender": "male",
+      "lastName": "jeph",
+      "email": "jethsmith@gmail.com",
+      "password": "12435",
+      "id": 4
+    },
+    {
+      "firstName": "jerry",
+      "gender": "female",
+      "lastName": "jason",
+      "email": "jasn@gmail.com",
+      "password": "2025",
+      "id": 5
     }
   ],
   "comments": [
