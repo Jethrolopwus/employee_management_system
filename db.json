@@ -3,7 +3,7 @@
     {
       "firstName": "john",
       "gender": "male",
-      "lastName": "Bad",
+      "lastName": "Bassey",
       "email": "ben@gmail.com",
       "password": "12345",
       "id": 2
@@ -31,6 +31,22 @@
       "email": "jasn@gmail.com",
       "password": "2025",
       "id": 5
+    },
+    {
+      "firstName": "mary ",
+      "gender": "female",
+      "lastName": "john",
+      "email": "mary@gmail.com",
+      "password": "2025",
+      "id": 6
+    },
+    {
+      "firstName": "praise",
+      "gender": "female",
+      "lastName": "joe",
+      "email": "joe@gmail.com",
+      "password": "1423",
+      "id": 7
     }
   ],
   "comments": [
